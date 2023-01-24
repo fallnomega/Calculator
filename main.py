@@ -14,10 +14,10 @@ def do_math_things(a):
     new_calculation_function = operations[math2]
     new_result = new_calculation_function(a,num3)
     print (new_result)
-    again = input(f"Keep going with previous value {new_result} or exit? y/n :").lower()
+    again = input(f"Keep going with previous value {new_result} or exit back to main prompt? y/n :").lower()
     if again == 'n':
         print ("Goodbye !")
-        return False
+        return
     else:
         do_math_things(new_result)
 
@@ -47,11 +47,19 @@ while keep_going == True:
     print (f"Result so far: {result}")
     continue_math = input("Continue with this same calculation or exit it? [y/n]").lower()
     if continue_math=='n':
-        print("Goodbye !")
-        keep_going=False
+        print("Exiting out of current calculation !")
     elif continue_math!='n' and continue_math !='y':
         print("I dont recognize that answer. Goodbye !")
         keep_going = False
     else:
         keep_going = do_math_things(result)
+    direction = input("Move on to new calculation or exit out ? [y/n]: ").lower()
+    if direction=='n':
+        print("Exiting out of current calculation !")
+        keep_going=False
+    elif continue_math=='y':
+        keep_going = True
+    else:
+        print("I dont recognize that answer. Goodbye !")
+        keep_going = False
 
