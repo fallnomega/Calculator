@@ -21,14 +21,19 @@ print(operations)
 
 # num1 = int(input("Whats the first number?: "))
 num1 = 3
-# num2 = int(input("Whats the second number?: "))
-num2 = 10
 
 # math = input("What math operation did you want to perform with those two numbers? ( +, - , * , / ) :\n")
-math = '+'
+for x in operations:
+    print (x)
+print("What math operation did you want to perform with those two numbers? See above symbol options:")
+math = '*'
 if math not in operations:
     print(f"{num1} {math} {num2} is not a valid math problem")
     exit()
+
+# num2 = int(input("Whats the second number?: "))
+num2 = 10
+
 results=0
 if operations[math]=='add':
     result=add(num1,num2)
